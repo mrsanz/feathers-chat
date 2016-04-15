@@ -18,6 +18,8 @@ const app = feathers();
 
 app.configure(configuration(path.join(__dirname, '..')));
 
+app.set('port', (process.env.PORT || 5000));
+
 app.use(compress())
   .options('*', cors())
   .use(cors())
