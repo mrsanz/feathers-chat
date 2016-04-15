@@ -1,6 +1,6 @@
 {
-  "host": "feathers-chat-app.feathersjs.com",
-  "port": 80,
+  "host": "localhost",
+  "port": 5000,
   "nedb": "NEDB_BASE_PATH",
   "public": "../public/",
   "auth": {
