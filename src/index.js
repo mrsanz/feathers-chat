@@ -1,18 +1,9 @@
-var express = require('express');
-var app = express();
+'use strict';
 
-app.set('port', (process.env.PORT || 5000));
+const app = require('./app');
+const port = app.get('port');
+const server = app.listen(port);
 
-app.use(express.static(__dirname + '/public'));
-
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-
-app.get('/', function(request, response) {
-  response.render('pages/index');
-});
-
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+server.on('listening', () =>
+  console.log(`Feathers application started on ${app.get('host')}:${port}`)
+);
